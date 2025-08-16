@@ -1,7 +1,14 @@
 # Kubernetes-Docker
 
 ## Installation of Docker, kubectl, minikube on Ubuntu
-[Minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download)
+Install a Ubuntu VM, Container or natively on a host with
+- 2 CPUs or more
+- 2GB of free memory
+- 20GB of free disk space
+- Internet connection
+- Container or virtual machine manager, such as: Docker, QEMU, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMware Fusion/Workstation
+  
+[Minikube Reference Doc](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download)
 
 ### Step 1 Install Docker
 - sudo apt-get update
