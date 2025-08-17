@@ -46,3 +46,4 @@ Install a Ubuntu VM, Container or natively on a host with
 - minik5be status
 
 - kubectl get nodes
+<img width="875" height="411" alt="image" src="https://github.com/user-attachments/assets/efff71ac-d5af-48cd-8c3b-8a95b6a498c9" />
