@@ -47,3 +47,12 @@ Install a Ubuntu VM, Container or natively on a host with
 
 - kubectl get nodes
 <img width="875" height="411" alt="image" src="https://github.com/user-attachments/assets/efff71ac-d5af-48cd-8c3b-8a95b6a498c9" />
+
+### kubectl commands
+- kubectl run nginx-01 --image=nginx
+- kubectl run nginx-02 --image=nginx
+- kubectl get nodes -o wide
+- kubectl get pods -o wide
+- kubectl describe node minikube
+- kubectl describe pod nginx-01
+- kubectl api-resources
