@@ -57,6 +57,8 @@ Install a Ubuntu VM, Container or natively on a host with
 - kubectl describe pod nginx-01
 - kubectl api-resources
 - kubectl run nginx --image=nginx --dry-run=client
+- kubectl run nginx --image=nginx --dry-run=client
+- 
 
 <img width="1869" height="741" alt="image" src="https://github.com/user-attachments/assets/ccc7505c-e7f0-4b1c-8f1c-2e3bf6052feb" />
 
