@@ -60,6 +60,8 @@ Install a Ubuntu VM, Container or natively on a host with
 - kubectl apply -f pod.yaml --dry-run=client
 - kubectl run nginx --image=nginx --dry-run=client -o yaml
 - kubectl delete pods --all
+- kubectl exec -it multi-container-pod -- bash
+- kubectl exec -it multi-container-pod -c redis-container -- bash
 
 <img width="1869" height="741" alt="image" src="https://github.com/user-attachments/assets/ccc7505c-e7f0-4b1c-8f1c-2e3bf6052feb" />
 
