@@ -108,6 +108,22 @@ ping-pod              0/1     CrashLoopBackOff   184 (4m53s ago)   45h     run=p
 
 rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
 $
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl label pods --all status=running
+pod/echo-pod labeled
+pod/multi-container-pod labeled
+pod/new-ping-pod labeled
+pod/ping-pod labeled
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl get pods --show-labels
+NAME                  READY   STATUS             RESTARTS          AGE     LABELS
+echo-pod              0/1     CrashLoopBackOff   196 (27s ago)     46h     env=dev,run=echo-pod,status=running
+multi-container-pod   2/2     Running            0                 3d20h   status=running
+new-ping-pod          0/1     CrashLoopBackOff   154 (4m44s ago)   44h     status=running
+ping-pod              0/1     CrashLoopBackOff   186 (2m13s ago)   45h     run=ping-pod,status=running
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
 
 </pre>
 </details>
