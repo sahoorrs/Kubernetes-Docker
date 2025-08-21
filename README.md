@@ -78,6 +78,25 @@ Install a Ubuntu VM, Container or natively on a host with
 </pre>
 </details>
 
+<details>
+<summary>kubectl.exe label pod echo-pod env=dev</summary>
+<pre>
+$ kubectl.exe label pod echo-pod env=dev
+pod/echo-pod labeled
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl.exe get pods --show-labels
+NAME                  READY   STATUS             RESTARTS          AGE     LABELS
+echo-pod              0/1     CrashLoopBackOff   193 (3m6s ago)    45h     env=dev,run=echo-pod
+multi-container-pod   2/2     Running            0                 3d20h   <none>
+new-ping-pod          0/1     CrashLoopBackOff   152 (4m10s ago)   44h     <none>
+ping-pod              0/1     CrashLoopBackOff   184 (25s ago)     45h     run=ping-pod
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$
+</pre>
+</details>
+
 
 <img width="1869" height="741" alt="image" src="https://github.com/user-attachments/assets/ccc7505c-e7f0-4b1c-8f1c-2e3bf6052feb" />
 
