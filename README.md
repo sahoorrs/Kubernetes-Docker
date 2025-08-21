@@ -62,6 +62,22 @@ Install a Ubuntu VM, Container or natively on a host with
 - kubectl delete pods --all
 - kubectl exec -it multi-container-pod -- bash
 - kubectl exec -it multi-container-pod -c redis-container -- bash
+- rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+<details>
+<summary>kubectl.exe get pods --show-labels</summary>
+<pre>
+    $ kubectl.exe get pods --show-labels
+    NAME                  READY   STATUS             RESTARTS          AGE     LABELS
+    echo-pod              0/1     CrashLoopBackOff   187 (4m39s ago)   45h     run=echo-pod
+    multi-container-pod   2/2     Running            0                 3d20h   <none>
+    new-ping-pod          0/1     CrashLoopBackOff   147 (2m44s ago)   44h     <none>
+    ping-pod              0/1     CrashLoopBackOff   178 (3m42s ago)   45h     run=ping-pod
+    
+    rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+    $  
+</pre>
+</details>
+
 
 <img width="1869" height="741" alt="image" src="https://github.com/user-attachments/assets/ccc7505c-e7f0-4b1c-8f1c-2e3bf6052feb" />
 
