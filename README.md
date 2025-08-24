@@ -211,6 +211,31 @@ frontend-replicaset   3         3         3       4h10m
 
 rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
 $
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl delete replicaset frontend-replicaset
+replicaset.apps "frontend-replicaset" deleted
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl get pods
+No resources found in default namespace.
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl apply -f replicaset.yaml
+replicaset.apps/frontend-replicaset created
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl.exe get pods
+NAME                        READY   STATUS    RESTARTS   AGE
+frontend-replicaset-lwwl4   1/1     Running   0          10s
+frontend-replicaset-s8pcf   1/1     Running   0          10s
+frontend-replicaset-ssrh9   1/1     Running   0          10s
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$
+
+
 
 </pre>
 </details>
