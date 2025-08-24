@@ -135,4 +135,85 @@ rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
 
 ## [REPLICA SET](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 
+# Replica Set
+<details>
+<summary>Replica Set auto create the pods after deletion </summary>
+<pre>
+$ cat replicaset.yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend-replicaset
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: us-docker.pkg.dev/google-samples/containers/gke/gb-frontend:v5
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl.exe apply -f replicaset.yaml
+replicaset.apps/frontend-replicaset created
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl.exe get replicaset
+NAME                  DESIRED   CURRENT   READY   AGE
+frontend-replicaset   3         3         0       71s
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ 
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl.exe get pods -l tier=frontend
+NAME                        READY   STATUS    RESTARTS   AGE
+frontend-replicaset-c4hrx   1/1     Running   0          7m55s
+frontend-replicaset-fhl2f   1/1     Running   0          7m55s
+frontend-replicaset-vlx9w   1/1     Running   0          7m55s
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl delete pods --all
+pod "echo-pod" deleted
+pod "frontend-replicaset-c4hrx" deleted
+pod "frontend-replicaset-fhl2f" deleted
+pod "frontend-replicaset-vlx9w" deleted
+pod "multi-container-pod" deleted
+pod "new-ping-pod" deleted
+pod "ping-pod" deleted
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl get pods
+NAME                        READY   STATUS    RESTARTS   AGE
+frontend-replicaset-g6tr5   1/1     Running   0          6s
+frontend-replicaset-kgfvw   1/1     Running   0          6s
+frontend-replicaset-rzqtc   1/1     Running   0          6s
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ 
+$ kubectl get replicaset
+NAME                  DESIRED   CURRENT   READY   AGE
+frontend-replicaset   3         3         3       4h10m
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$
+
+</pre>
+</details>
+
+
 # DOCKER
