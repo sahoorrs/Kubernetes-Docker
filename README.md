@@ -48,6 +48,71 @@ Install a Ubuntu VM, Container or natively on a host with
 - kubectl get nodes
 <img width="875" height="411" alt="image" src="https://github.com/user-attachments/assets/efff71ac-d5af-48cd-8c3b-8a95b6a498c9" />
 
+### kubectl command syntax
+<details>
+<summary>kubectl command syntax</summary>
+<pre>
+kubectl is the command-line tool used to interact with a Kubernetes cluster. It lets you deploy applications, inspect and manage cluster resources, and view logs.
+
+🧱 Basic Structure of kubectl Command
+kubectl [command] [type] [name] [flags]
+
+📌 Components Breakdown:
+Component	Description
+kubectl	The command-line tool
+command	What you want to do (e.g., get, describe, create, delete)
+type	The type of resource (e.g., pod, deployment, service)
+name	The name of the resource (optional)
+flags	Optional flags like -n, -o, --all, etc.
+📘 Common kubectl Commands
+🔹 Get Resources
+kubectl get pods
+kubectl get deployments
+kubectl get services
+kubectl get all
+
+🔹 Describe Resource (Detailed Info)
+kubectl describe pod my-pod
+kubectl describe deployment my-deployment
+
+🔹 Create from YAML
+kubectl apply -f my-config.yaml
+
+🔹 Delete Resources
+kubectl delete pod my-pod
+kubectl delete -f my-config.yaml
+
+🔹 Logs
+kubectl logs my-pod
+
+🔹 Exec (Run Command in Pod)
+kubectl exec -it my-pod -- bash
+
+🛠️ Useful Flags
+Flag	Description
+-n <namespace>	Specify namespace
+--all	Target all resources of a type
+-o yaml/json	Output in YAML or JSON
+--watch	Watch changes in real time
+--dry-run=client	Preview changes without applying
+--force	Force deletion
+--grace-period=0	Immediate deletion (with --force)
+🧪 Examples
+List all pods in a namespace:
+kubectl get pods -n dev
+
+Get a YAML manifest of a deployment:
+kubectl get deployment my-app -o yaml
+
+Create a namespace:
+kubectl create namespace test
+
+Apply multiple configs:
+kubectl apply -f ./configs/
+
+</pre>
+</details>
+
 ### kubectl commands
 - kubectl run nginx-01 --image=nginx
 - kubectl run nginx-02 --image=nginx
@@ -234,6 +299,33 @@ frontend-replicaset-ssrh9   1/1     Running   0          10s
 
 rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
 $
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl scale --replicas=5 rs/frontend-replicaset
+replicaset.apps/frontend-replicaset scaled
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl get pods
+NAME                        READY   STATUS    RESTARTS   AGE
+frontend-replicaset-9c2kc   1/1     Running   0          5s
+frontend-replicaset-lwwl4   1/1     Running   0          9m45s
+frontend-replicaset-pwd85   1/1     Running   0          5s
+frontend-replicaset-s8pcf   1/1     Running   0          9m45s
+frontend-replicaset-ssrh9   1/1     Running   0          9m45s
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl scale --replicas=1 rs/frontend-replicaset
+replicaset.apps/frontend-replicaset scaled
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$ kubectl get pods
+NAME                        READY   STATUS    RESTARTS   AGE
+frontend-replicaset-lwwl4   1/1     Running   0          10m
+
+rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
+$
+
 
 
 
