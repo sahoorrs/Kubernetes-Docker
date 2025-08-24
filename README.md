@@ -133,4 +133,6 @@ rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
 
 ### [Kubernetes API reference doc](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/)
 
+## [REPLICA SET](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
+
 # DOCKER
