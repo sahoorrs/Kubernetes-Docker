@@ -1,3 +1,15 @@
+<!--
+</pre>
+</details>
+
+<details>
+<summary>kubectl command syntax</summary>
+<pre>
+
+</pre>
+</details>
+-->
+
 # Kubernetes-Docker
 
 ## Installation of Docker, kubectl, minikube on Ubuntu
@@ -326,11 +338,14 @@ frontend-replicaset-lwwl4   1/1     Running   0          10m
 rrsah@RashmiPersonal MINGW64 ~/VSCODE/github/kubernetes (pods)
 $
 
-
-
-
 </pre>
 </details>
 
+<details>
+<summary>kubectl command syntax</summary>
+<pre>
+
+</pre>
+</details>
 
 # DOCKER
