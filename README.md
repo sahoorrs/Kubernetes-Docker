@@ -341,8 +341,9 @@ $
 </pre>
 </details>
 
+### Deployment
 <details>
-<summary>kubectl command syntax</summary>
+<summary>Deployment </summary>
 <pre>
 
 </pre>
