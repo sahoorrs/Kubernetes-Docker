@@ -1,11 +1,14 @@
 <!--
-</pre>
-</details>
-
 <details>
-<summary>kubectl command syntax</summary>
-<pre>
+<summary>Click to expand</summary>
 
+This content under the details tag is hidden by default.
+
+# pre tag is used for preserving the formatting as in the original text
+<pre> 
+- You can use **Markdown**
+- Lists
+- Code blocks
 </pre>
 </details>
 -->
@@ -55,9 +58,52 @@ Install a Ubuntu VM, Container or natively on a host with
 - minikube start --force
 
 ### Step 5: Verification
-- minik5be status
+- minikube status
 
 - kubectl get nodes
+
+### Enable Ingress in minikube
+- minikube enable ingress
+<details>
+<pre>
+PS C:\windows\system32> minikube addons enable ingress
+* ingress is an addon maintained by Kubernetes. For any concerns contact minikube on GitHub.
+You can view the list of minikube maintainers at: https://github.com/kubernetes/minikube/blob/master/OWNERS
+* After the addon is enabled, please run "minikube tunnel" and your ingress resources would be available at "127.0.0.1"
+  - Using image registry.k8s.io/ingress-nginx/controller:v1.12.2
+  - Using image registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.5.3
+  - Using image registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.5.3
+* Verifying ingress addon...
+* The 'ingress' addon is enabled
+PS C:\windows\system32>
+
+  PS C:\windows\system32> kubectl get pods -n ingress-nginx
+NAME                                       READY   STATUS      RESTARTS   AGE
+ingress-nginx-admission-create-l4bqm       0/1     Completed   0          46s
+ingress-nginx-admission-patch-btrmp        0/1     Completed   2          46s
+ingress-nginx-controller-67c5cb88f-bxcw7   1/1     Running     0          46s
+PS C:\windows\system32>
+
+PS C:\windows\system32> kubectl create deployment web --image=nginx
+deployment.apps/web created
+PS C:\windows\system32> kubectl expose deployment web --port=80
+service/web exposed
+PS C:\windows\system32> kubectl create ingress web-ingress --rule="web.local/*=web:80"
+ingress.networking.k8s.io/web-ingress created
+PS C:\windows\system32>
+PS C:\windows\system32> minikube tunnel
+* Tunnel successfully started
+
+* NOTE: Please do not close this terminal as this process must stay alive for the tunnel to be accessible ...
+
+! Access to ports below 1024 may fail on Windows with OpenSSH clients older than v8.1. For more information, see: https://minikube.sigs.k8s.io/docs/handbook/accessing/#access-to-ports-1024-on-windows-requires-root-permission
+* Starting tunnel for service web-ingress.
+* Stopped tunnel for service web-ingress.
+PS C:\windows\system32>
+</pre>
+  
+</details>
+
 <img width="875" height="411" alt="image" src="https://github.com/user-attachments/assets/efff71ac-d5af-48cd-8c3b-8a95b6a498c9" />
 
 ### kubectl command syntax
