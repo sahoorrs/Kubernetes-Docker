@@ -104,6 +104,138 @@ PS C:\windows\system32>
   
 </details>
 
+### Helm packaging
+<details>
+<summary>Helm sample packaging</summary>
+<pre>
+C:\Users\rrsah\VSCODE\helm>mkdir best-commerce
+
+C:\Users\rrsah\VSCODE\helm>cd best-commerce
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>helm create payments
+Creating payments
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 1484-B0AE
+
+ Directory of C:\Users\rrsah\VSCODE\helm\best-commerce
+
+01/21/2026  06:36 PM    <DIR>          .
+01/21/2026  06:35 PM    <DIR>          ..
+01/21/2026  06:36 PM    <DIR>          payments
+               0 File(s)              0 bytes
+               3 Dir(s)  600,436,924,416 bytes free
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>dir payments
+ Volume in drive C is Windows
+ Volume Serial Number is 1484-B0AE
+
+ Directory of C:\Users\rrsah\VSCODE\helm\best-commerce\payments
+
+01/21/2026  06:36 PM    <DIR>          .
+01/21/2026  06:36 PM    <DIR>          ..
+01/21/2026  06:36 PM               349 .helmignore
+01/21/2026  06:36 PM             1,144 Chart.yaml
+01/21/2026  06:36 PM    <DIR>          charts
+01/21/2026  06:36 PM    <DIR>          templates
+01/21/2026  06:36 PM             5,274 values.yaml
+               3 File(s)          6,767 bytes
+               4 Dir(s)  600,436,854,784 bytes free
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>dir payments\Charts
+ Volume in drive C is Windows
+ Volume Serial Number is 1484-B0AE
+
+ Directory of C:\Users\rrsah\VSCODE\helm\best-commerce\payments\Charts
+
+01/21/2026  06:36 PM    <DIR>          .
+01/21/2026  06:36 PM    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  600,436,850,688 bytes free
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>dir payments\templates
+ Volume in drive C is Windows
+ Volume Serial Number is 1484-B0AE
+
+ Directory of C:\Users\rrsah\VSCODE\helm\best-commerce\payments\templates
+
+01/21/2026  06:36 PM    <DIR>          .
+01/21/2026  06:36 PM    <DIR>          ..
+01/21/2026  06:36 PM             2,385 deployment.yaml
+01/21/2026  06:36 PM               994 hpa.yaml
+01/21/2026  06:36 PM               955 httproute.yaml
+01/21/2026  06:36 PM             1,091 ingress.yaml
+01/21/2026  06:36 PM             2,822 NOTES.txt
+01/21/2026  06:36 PM               364 service.yaml
+01/21/2026  06:36 PM               391 serviceaccount.yaml
+01/21/2026  06:36 PM    <DIR>          tests
+01/21/2026  06:36 PM             1,792 _helpers.tpl
+               8 File(s)         10,794 bytes
+               3 Dir(s)  600,436,604,928 bytes free
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>cd ..
+
+C:\Users\rrsah\VSCODE\helm>cd best-commerce
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>helm create shipping
+Creating shipping
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 1484-B0AE
+
+ Directory of C:\Users\rrsah\VSCODE\helm\best-commerce
+
+01/21/2026  06:38 PM    <DIR>          .
+01/21/2026  06:35 PM    <DIR>          ..
+01/21/2026  06:36 PM    <DIR>          payments
+01/21/2026  06:38 PM    <DIR>          shipping
+               0 File(s)              0 bytes
+               4 Dir(s)  600,435,220,480 bytes free
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>helm package shipping
+Successfully packaged chart and saved it to: C:\Users\rrsah\VSCODE\helm\best-commerce\shipping-0.1.0.tgz
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 1484-B0AE
+
+ Directory of C:\Users\rrsah\VSCODE\helm\best-commerce
+
+01/21/2026  06:42 PM    <DIR>          .
+01/21/2026  06:35 PM    <DIR>          ..
+01/21/2026  06:36 PM    <DIR>          payments
+01/21/2026  06:38 PM    <DIR>          shipping
+01/21/2026  06:42 PM             4,931 shipping-0.1.0.tgz
+               1 File(s)          4,931 bytes
+               4 Dir(s)  600,433,618,944 bytes free
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>helm package payments
+Successfully packaged chart and saved it to: C:\Users\rrsah\VSCODE\helm\best-commerce\payments-0.1.0.tgz
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>helm repo index .
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 1484-B0AE
+
+ Directory of C:\Users\rrsah\VSCODE\helm\best-commerce
+
+01/21/2026  06:43 PM    <DIR>          .
+01/21/2026  06:35 PM    <DIR>          ..
+01/21/2026  06:43 PM               711 index.yaml
+01/21/2026  06:36 PM    <DIR>          payments
+01/21/2026  06:43 PM             4,931 payments-0.1.0.tgz
+01/21/2026  06:38 PM    <DIR>          shipping
+01/21/2026  06:42 PM             4,931 shipping-0.1.0.tgz
+               3 File(s)         10,573 bytes
+               4 Dir(s)  600,433,262,592 bytes free
+
+C:\Users\rrsah\VSCODE\helm\best-commerce>  
+</pre>
+</details>
+
 <img width="875" height="411" alt="image" src="https://github.com/user-attachments/assets/efff71ac-d5af-48cd-8c3b-8a95b6a498c9" />
 
 ### kubectl command syntax
